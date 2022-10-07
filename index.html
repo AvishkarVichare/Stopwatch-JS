@@ -9,6 +9,22 @@
     <script>
         tailwind.config = {
           theme: {
+            screens: {
+      'sm': '380px',
+      // => @media (min-width: 375px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
             extend: {
               colors: {
                 clifford: '#da373d',
@@ -19,9 +35,18 @@
       </script>
 </head>
 <body class="bg-black text-white">
-    <div class="container h-[100vh] flex justify-center items-center">
-        <div class="rounded-[50%] border-4 border-gray-600 w-[400px] h-[400px] flex flex-col justify-center items-center">
-            <div id="main-watch" class="text-[3rem]">
+  <h1 class="font-bold text-center text-[2rem] my-2 sm:text-[3rem]">JS Stopwatch</h1>
+    <div class="container h-[60vh] flex justify-center items-center relative ">
+    <div class=" border-4 p-2 bg-gray-600 border-gray-500   rounded-[50%] w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] flex justify-center absolute">
+      <div id="rotator" class="h-[210px] w-[10px] bg-white relative top-[-14px] origin-bottom "></div>
+    </div>
+
+        <div class="relative bg-black rounded-[50%] border-4 border-gray-600 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] flex flex-col justify-center items-center ">
+
+
+
+
+            <div id="main-watch" class="text-[2rem] sm:text-[3rem] ">
                 <span id="h">00</span>
                 :
                 <span id="m">00</span>
@@ -30,13 +55,28 @@
                 :
                 <spam id="cs">00</spam>
             </div>
-            <div class="mt-4">
+            <div class="mt-4 ">
                 <button class="mx-2 font-bold" id="start">Start</button>
                 <button class="mx-2 font-bold" id="stop">Stop</button>
                 <button class="mx-2 font-bold" id="reset">Reset</button>
             </div>
         </div>
+      
     </div>
+
+    <footer class="text-gray-300 body-font absolute bottom-0 w-full">
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-300">
+          AvishkarVIT
+        </a>
+        <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">A Developer
+          <a href="https://www.linkedin.com/in/avishkar-vichare-35b19b225/" class="text-gray-500 ml-1" rel="noopener noreferrer" target="_blank">@avishkarvichare</a>
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <a href="https://github.com/AvishkarVichare/Stopwatch-JS">Source Code</a>
+        </span>
+      </div>
+    </footer>
 
     <script src="./script.js"></script>
 </body>
